@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #canvas{
+      border: 1px solid green;
+    }
+  </style>
+</head>
+<body>
+  <canvas id="canvas" height="800" width="800"></canvas>
+  <script>
+    function line(context, x1, y1, x2, y2, color) {
+      context.beginPath()
+      context.moveTo(x1, y1)
+      context.lineTo(x2, y2)
+      context.strokeStyle = color
+      context.lineWidth = 4
+      context.stroke()
+      context.closePath();
+    }
+    const canvas = document.querySelector('#canvas')
+    const ctx = canvas.getContext('2d')
+
+    // line(ctx, 100, 100, 105, 100, 'red')
+    // line(ctx, 110, 100, 115, 100, 'red')
+    // line(ctx, 120, 100, 125, 100, 'red')
+    // line(ctx, 130, 100, 135, 100, 'red')
+
+    for (let i = 0; i < 30; i++) {
+      line(ctx, 100+i*10, 100, 105+10*i, 100, 'red')
+    }
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #canvas{
+      border: 1px solid green;
+    }
+  </style>
+</head>
+<body>
+  <canvas id="canvas" height="800" width="800"></canvas>
+  <script>
+    function line(context, x1, y1, x2, y2, color) {
+      context.beginPath()
+      context.moveTo(x1, y1)
+      context.lineTo(x2, y2)
+      context.strokeStyle = color
+      context.stroke()
+      context.closePath();
+    }
+    const canvas = document.querySelector('#canvas')
+    const ctx = canvas.getContext('2d')
+
+    // ctx.beginPath()
+    // ctx.moveTo(100, 100)
+    // ctx.lineTo(100, 500)
+    // ctx.strokeStyle = 'yellow'
+    // ctx.stroke()
+    // ctx.closePath();
+    line(ctx, 100, 100, 100, 500, 'yellow')
+
+    // ctx.beginPath()
+    // ctx.moveTo(100, 100)
+    // ctx.lineTo(600, 100)
+    // ctx.strokeStyle = 'red'
+    // ctx.stroke()
+    // ctx.closePath()
+    line(ctx, 100, 100, 600, 100, 'red')
+
+    // ctx.beginPath()
+    // ctx.moveTo(100, 500)
+    // ctx.lineTo(600, 500)
+    // ctx.strokeStyle = 'blue'
+    // ctx.stroke()
+    // ctx.closePath()
+    line(ctx, 100, 500, 600, 500, 'blue')
+
+    // ctx.beginPath()
+    // ctx.moveTo(600, 100)
+    // ctx.lineTo(600, 500)
+    // ctx.strokeStyle = 'purple'
+    // ctx.stroke()
+    // ctx.closePath()
+    line(ctx, 600, 100, 600, 500, 'purple')
+  </script>
+</body>
+</html>
