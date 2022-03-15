@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #canvas{
+      border: 1px solid green;
+    }
+  </style>
+</head>
+<body>
+  <canvas id="canvas" width="800" height="800"></canvas>
+  <script>
+    // 操作画布只能通过原生js
+    const canvas = document.querySelector('#canvas')
+    const ctx = canvas.getContext('2d')
+
+    /* 画坐标系 */
+    ctx.beginPath()
+    ctx.moveTo(100, 100)
+    ctx.lineTo(100, 400)
+    ctx.lineTo(400, 400)
+    ctx.stroke()
+    ctx.closePath()
+
+    /* 画随机矩形 */
+    for (let i = 0; i < 6; i++) {
+      const height = Math.random()*280+10;
+      // ctx.fillStyle = '#' + parseInt(Math.random()*0xffff).toString(16)
+      ctx.fillStyle = `rgba(${parseInt(Math.random()*256)}, ${parseInt(Math.random()*256)}, ${parseInt(Math.random()*256)})`
+      ctx.fillRect(120+40*i, 400-height, 20, height)
+    }
+  </script>
+</body>
+</html>

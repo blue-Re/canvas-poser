@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #canvas{
+      border: 1px solid green;
+    }
+  </style>
+</head>
+<body>
+  <canvas id="canvas" width="800" height="800"></canvas>
+  <script>
+    // 操作画布只能通过原生js
+    const canvas = document.querySelector('#canvas')
+    const ctx = canvas.getContext('2d')
+
+    ctx.rect(100, 100, 300, 300)
+    ctx.fill()
+    ctx.lineWidth = 5
+    ctx.strokeStyle = 'red'
+    ctx.stroke()
+
+    ctx.fillStyle = 'pink'
+    ctx.fillRect(500, 500, 100, 100)
+
+    ctx.strokeStyle = 'yellow'
+    ctx.lineWidth = 1
+    ctx.strokeRect(700, 700, 100, 100)
+  </script>
+</body>
+</html>

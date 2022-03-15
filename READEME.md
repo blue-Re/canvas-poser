@@ -16,3 +16,23 @@
   1. strokeStyle 属性设置或返回用于线条的颜色、渐变或者模式
   2. lineWidth 设置线宽
 
+## 二、画矩形
+
+1. 绘制矩形**需要着色描边，可以通过fill方法来填充颜色**
+
+   rect(x, y, width, height)
+
+   如果需要描边和填充，需要先进行填充，再进行描边，否则就会出现边框像素变小的问题。
+
+2. 绘制实心矩形
+
+   fillRect(x, y, width, height)
+
+3. 绘制空心矩形
+
+   strokeRect(x, y, width, height)
+
+## 三、清除画布
+
+clearRect(x, y, width, height) 清除画布
+
